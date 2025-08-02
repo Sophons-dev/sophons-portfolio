@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatedGradientText } from '@/components/magicui/animated-gradient-text';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const Hero = () => {
     // Animation variants
@@ -93,18 +94,23 @@ const Hero = () => {
                         variant={'default'}
                         size={'lg'}
                         className='bg-white text-black hover:bg-white/80 hover:text-black cursor-pointer pointer-events-auto transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl'
+                        asChild
                     >
-                        Book a call
+                        <Link href={'https://cal.com/sophons/30min'} target='_blank' rel='noopener noreferrer'>
+                            Book a call
+                        </Link>
                     </Button>
                 </motion.div>
                 <motion.div variants={buttonItem}>
-                    <Button
-                        variant={'ghost'}
-                        size={'lg'}
-                        className='bg-black/30 text-white hover:bg-black/70 hover:text-white cursor-pointer  pointer-events-auto transition-all duration-300 transform hover:scale-105 border border-white/20'
-                    >
-                        Send us a message
-                    </Button>
+                    <Link href={'mailto:hello@sophons.dev'}>
+                        <Button
+                            variant={'ghost'}
+                            size={'lg'}
+                            className='bg-black/30 text-white hover:bg-black/70 hover:text-white cursor-pointer  pointer-events-auto transition-all duration-300 transform hover:scale-105 border border-white/20'
+                        >
+                            Send us a message
+                        </Button>
+                    </Link>
                 </motion.div>
             </motion.div>
         </motion.div>
