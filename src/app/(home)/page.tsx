@@ -13,7 +13,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="absolute top-0 left-0 w-full z-30 h-dvh flex justify-center items-center">
+                <div className="absolute top-0 left-0 w-full z-30 h-dvh flex justify-center items-center md:pointer-events-none">
                     <div className="mb-30 lg:mb-60">
                         <Hero />
                     </div>
