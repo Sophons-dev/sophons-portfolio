@@ -6,14 +6,14 @@ export default function Home() {
     return (
         <div className="relative w-full min-h-screen overflow-hidden bg-neutral-900 md:px-0">
             <div className="relative h-screen z-10">
-                <div className="inset-0 w-full h-full pointer-events-none">
+                <div className="inset-0 w-full z-20 h-full pointer-events-auto">
                     <div className="absolute top-20 inset-0 w-full h-full">
                         <ThreeScene />
                         <HeroGradients />
                     </div>
                 </div>
 
-                <div className="absolute top-0 left-0 w-full h-dvh z-1 flex justify-center items-center pointer-events-none">
+                <div className="absolute top-0 left-0 w-full z-30 h-dvh flex justify-center items-center">
                     <div className="mb-30 lg:mb-60">
                         <Hero />
                     </div>

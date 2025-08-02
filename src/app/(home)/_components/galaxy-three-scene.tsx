@@ -37,6 +37,20 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
 
         let isDestroyed = false;
 
+        const handleTouchStart = (e: TouchEvent) => {
+            if (isMobileRef.current && e.touches.length === 1) {
+                // Only prevent default if it's a single touch (pan/rotate)
+                e.preventDefault();
+            }
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (isMobileRef.current && e.touches.length === 1) {
+                // Only prevent default if it's a single touch (pan/rotate)
+                e.preventDefault();
+            }
+        };
+
         const init = async () => {
             if (isDestroyed) return;
 
@@ -208,6 +222,10 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
 
             window.addEventListener('resize', onWindowResize);
 
+            // Add touch event listeners
+            mountRef.current?.addEventListener('touchstart', handleTouchStart, { passive: false });
+            mountRef.current?.addEventListener('touchmove', handleTouchMove, { passive: false });
+
             // Store references for cleanup
             sceneRef.current = {
                 camera,
@@ -273,6 +291,11 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             if (sceneRef.current.cleanup) {
                 sceneRef.current.cleanup();
             }
+            // Cleanup touch event listeners
+            if (mountRef.current) {
+                mountRef.current.removeEventListener('touchstart', handleTouchStart);
+                mountRef.current.removeEventListener('touchmove', handleTouchMove);
+            }
         };
     }, []);
 
@@ -286,7 +309,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                pointerEvents: isMobileRef.current ? 'none' : 'auto',
+                pointerEvents: 'auto',
                 zIndex: 1
             }}
         />
