@@ -30,7 +30,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
         controls?: OrbitControls;
         cleanup?: () => void;
     }>({});
-    let isMobile;
+    const isMobileRef = useRef(false);
 
     useEffect(() => {
         if (!mountRef.current) return;
@@ -44,6 +44,9 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             camera.position.set(7, 3, 2);
 
             const scene = new THREE.Scene();
+
+            // Initialize mobile state
+            isMobileRef.current = window.innerWidth < 768;
 
             // Starfield background using standard WebGL
             const starGeometry = new THREE.BufferGeometry();
@@ -168,6 +171,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             controls.enableRotate = true;
             controls.autoRotate = true;
             controls.autoRotateSpeed = 0.5;
+            controls.enabled = !isMobileRef.current; // Set initial enabled state based on screen size
 
             // Store controls in ref for cleanup
             sceneRef.current.controls = controls;
@@ -176,10 +180,10 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 if (isDestroyed) return;
 
                 // Disable orbit controls on mobile
-                isMobile = window.innerWidth < 768;
+                isMobileRef.current = window.innerWidth < 768;
 
                 if (controls) {
-                    controls.enabled = !isMobile;
+                    controls.enabled = !isMobileRef.current;
                 }
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
@@ -282,7 +286,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                pointerEvents: isMobile ? 'none' : 'auto',
+                pointerEvents: isMobileRef.current ? 'none' : 'auto',
                 zIndex: 1
             }}
         />
