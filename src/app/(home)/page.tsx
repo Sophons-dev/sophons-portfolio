@@ -13,8 +13,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="absolute top-0 left-0 w-full h-full z-1 flex justify-center items-center pointer-events-none">
-                    <div className="md:mb-80 mb-40">
+                <div className="absolute top-0 left-0 w-full h-dvh z-1 flex justify-center items-center pointer-events-none">
+                    <div className="mb-30 lg:mb-60">
                         <Hero />
                     </div>
 

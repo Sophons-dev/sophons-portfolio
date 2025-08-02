@@ -156,10 +156,10 @@ export const HeroGradients = () => {
     return (
         <>
             {/* Top gradient */}
-            <div
+            {/* <div
                 className="absolute top-0 h-0 md:h-30 left-0 w-full z-20 pointer-events-none
                        bg-gradient-to-b from-neutral-900 via-neutral-900/5 to-transparent"
-            />
+            /> */}
 
             {/* Left gradient */}
             <div
