@@ -227,7 +227,7 @@ export const SkeletonFour = () => {
             >
                 <Image
                     src={'/avatar.png'}
-                    alt="avatar"
+                    alt="AI-Powered Data Analysis"
                     height="100"
                     width="100"
                     className="rounded-full h-10 w-10"
@@ -242,7 +242,7 @@ export const SkeletonFour = () => {
             <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
                 <Image
                     src={'/avatar.png'}
-                    alt="avatar"
+                    alt="Business Intelligence Solutions"
                     height="100"
                     width="100"
                     className="rounded-full h-10 w-10"
@@ -260,7 +260,7 @@ export const SkeletonFour = () => {
             >
                 <Image
                     src={'/avatar.png'}
-                    alt="avatar"
+                    alt="Predictive Analytics & ML"
                     height="100"
                     width="100"
                     className="rounded-full h-10 w-10"
@@ -313,7 +313,7 @@ export const SkeletonFive = () => {
             >
                 <Image
                     src={'/avatar.png'}
-                    alt="avatar"
+                    alt="Cloud Solutions"
                     height="100"
                     width="100"
                     className="rounded-full h-10 w-10"
