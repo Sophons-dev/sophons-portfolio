@@ -16,7 +16,7 @@ import { SkeletonOne, SkeletonTwo, SkeletonThree, SkeletonFour, SkeletonFive } f
 
 export function OffersSection() {
     return (
-        <section className="py-20 mt-30">
+        <section className="py-20 mt-30 px-4 md:px-0">
             <div className="mb-15 flex flex-col gap-3">
                 <AnimatedGradientTextDemo text="See what we can do" />
                 <h2 className="text-4xl text-white text-center">Our Offers and Services</h2>

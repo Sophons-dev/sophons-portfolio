@@ -163,13 +163,13 @@ export const HeroGradients = () => {
 
             {/* Left gradient */}
             <div
-                className="absolute left-0 h-full w-10 md:w-100 z-20 pointer-events-none
+                className="absolute left-0 h-full w-15 md:w-100 z-20 pointer-events-none
                        bg-gradient-to-r from-neutral-900 via-neutral-900/5 to-transparent"
             />
 
             {/* Right gradient */}
             <div
-                className="absolute right-0 h-full w-10 md:w-100 z-20 pointer-events-none
+                className="absolute right-0 h-full w-15 md:w-100 z-20 pointer-events-none
                        bg-gradient-to-l from-neutral-900 via-neutral-900/5 to-transparent"
             />
 
