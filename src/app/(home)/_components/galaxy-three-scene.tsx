@@ -168,10 +168,6 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             controls.autoRotate = true;
             controls.autoRotateSpeed = 0.5;
 
-            // Prevent page scroll when interacting with the canvas
-            renderer.domElement.style.touchAction = 'none';
-            renderer.domElement.addEventListener('wheel', (e) => e.preventDefault(), { passive: false });
-
             // Store controls in ref for cleanup
             sceneRef.current.controls = controls;
 
