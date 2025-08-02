@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   facebook: {
     appId: '1251254989809023'
-  }
+  },
   twitter: {
     card: "summary_large_image",
     title: "Sophons - AI & Business Intelligence Solutions",
