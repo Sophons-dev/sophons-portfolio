@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="relative w-full min-h-screen overflow-hidden bg-neutral-900 px-4 md:px-0">
             <div className="relative h-screen z-10">
-                <div className="inset-0 w-full h-full">
+                <div className="inset-0 w-full h-full pointer-events-none">
                     <div className="absolute top-20 inset-0 w-full h-full">
                         <ThreeScene />
                         <HeroGradients />

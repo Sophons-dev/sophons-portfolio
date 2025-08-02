@@ -30,6 +30,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
         controls?: OrbitControls;
         cleanup?: () => void;
     }>({});
+    let isMobile;
 
     useEffect(() => {
         if (!mountRef.current) return;
@@ -175,7 +176,8 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 if (isDestroyed) return;
 
                 // Disable orbit controls on mobile
-                const isMobile = window.innerWidth < 768;
+                isMobile = window.innerWidth < 768;
+
                 if (controls) {
                     controls.enabled = !isMobile;
                 }
@@ -280,7 +282,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 left: 0,
                 width: '100%',
                 height: '100%',
-                pointerEvents: 'auto',
+                pointerEvents: isMobile ? 'none' : 'auto',
                 zIndex: 1
             }}
         />
