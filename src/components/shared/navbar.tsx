@@ -23,7 +23,7 @@ export default function Navbar() {
         <nav className={cn("flex px-4 md:px-0 fixed top-0 left-0 right-0 z-50 max-w-5xl mx-auto transition-all duration-500 ease-in-out", isScrolled ? "h-16 mt-3" : "h-24")}>
             <div className={cn("flex items-center justify-between w-full p-3 rounded-2xl", isScrolled ? "bg-neutral-900/60 backdrop-blur-sm border border-white/20" : "")}>
                 <div className="flex items-center space-x-2">
-                    <SophonsIcon width={36} height={36} />
+                    <SophonsIcon width={30} height={30} />
                     <h4 className="text-lg font-semibold text-white">Sophons</h4>
                 </div>
 
