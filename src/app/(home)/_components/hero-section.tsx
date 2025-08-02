@@ -67,7 +67,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.div variants={item}>
-                <AnimatedGradientTextDemo />
+                <AnimatedGradientTextDemo icon={'🎉'} text="Introducing Sophons" />
             </motion.div>
 
             <motion.div variants={item} className='text-3xl md:text-6xl md:leading-16 mb-3'>
@@ -113,9 +113,9 @@ const Hero = () => {
 
 
 
-const AnimatedGradientTextDemo = () => {
+export const AnimatedGradientTextDemo = ({ icon, text, className }: { icon?: React.ReactNode, text: string, className?: string }) => {
     return (
-        <div className="group relative mx-auto flex items-center justify-center rounded-full px-4 py-1 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ">
+        <div className={cn("group w-fit relative mx-auto flex items-center justify-center rounded-full px-4 py-1 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] ", className)}>
             <span
                 className={cn(
                     "absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-white via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]",
@@ -129,9 +129,14 @@ const AnimatedGradientTextDemo = () => {
                     WebkitClipPath: "padding-box",
                 }}
             />
-            🎉 <hr className="mx-2 h-4 w-px shrink-0 bg-neutral-500" />
+            {icon && (
+                <>
+                    {icon}
+                    <hr className="mx-2 h-4 w-px shrink-0 bg-neutral-500" />
+                </>
+            )}
             <AnimatedGradientText className="text-sm font-medium">
-                Introducing Sophons
+                {text}
             </AnimatedGradientText>
             <ChevronRight
                 className="ml-1 size-4 stroke-neutral-500 transition-transform
