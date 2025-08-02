@@ -1,0 +1,36 @@
+
+"use client";
+
+import { useEffect, useState } from "react";
+import { SophonsIcon } from "../custom/icons";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
+
+export default function Navbar() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    return (
+        <nav className={cn("flex fixed top-0 left-0 right-0 z-50 max-w-5xl mx-auto transition-all duration-500 ease-in-out", isScrolled ? "h-16 mt-3" : "h-24")}>
+            <div className={cn("flex items-center justify-between w-full p-3 rounded-2xl", isScrolled ? "bg-neutral-900/60 backdrop-blur-sm border border-white/20" : "")}>
+                <div className="flex items-center space-x-2">
+                    <SophonsIcon width={36} height={36} />
+                    <h4 className="text-lg font-semibold text-white">Sophons</h4>
+                </div>
+
+                <div className="font-semibold text-white">
+                    <Button variant={'outline'} className="bg-transparent border border-white/20">
+                        Book a call
+                    </Button>
+                </div>
+            </div>
+        </nav>
+    )
+}

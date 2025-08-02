@@ -4,19 +4,20 @@ import { OffersSection } from "./_components/offers-section";
 
 export default function Home() {
     return (
-        <div className="relative w-full min-h-screen overflow-hidden bg-neutral-900">
+        <div className="relative w-full min-h-screen overflow-hidden bg-neutral-900 px-4 md:px-0">
             <div className="relative h-screen z-10">
-                <div className="absolute top-0 inset-0 w-full h-full">
-                    <ThreeScene />
+                <div className="inset-0 w-full h-full">
+                    <div className="absolute top-20 inset-0 w-full h-full">
+                        <ThreeScene />
+                        <HeroGradients />
+                    </div>
                 </div>
 
                 <div className="absolute top-0 left-0 w-full h-full z-1 flex justify-center items-center pointer-events-none">
-                    <div className="mb-80">
-
+                    <div className="md:mb-80 mb-40">
                         <Hero />
                     </div>
 
-                    <HeroGradients />
                 </div>
             </div>
 

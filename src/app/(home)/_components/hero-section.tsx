@@ -86,7 +86,7 @@ const Hero = () => {
                 variants={container}
                 initial="hidden"
                 animate="show"
-                className='flex flex-col sm:flex-row gap-4'
+                className='flex md:flex-row gap-2'
             >
                 <motion.div variants={buttonItem}>
                     <Button
@@ -146,19 +146,19 @@ export const HeroGradients = () => {
         <>
             {/* Top gradient */}
             <div
-                className="absolute top-0 h-50 left-0 w-full z-20 pointer-events-none
+                className="absolute top-0 h-0 md:h-30 left-0 w-full z-20 pointer-events-none
                        bg-gradient-to-b from-neutral-900 via-neutral-900/5 to-transparent"
             />
 
             {/* Left gradient */}
             <div
-                className="absolute left-0 h-full w-100 z-20 pointer-events-none
+                className="absolute left-0 h-full w-10 md:w-100 z-20 pointer-events-none
                        bg-gradient-to-r from-neutral-900 via-neutral-900/5 to-transparent"
             />
 
             {/* Right gradient */}
             <div
-                className="absolute right-0 h-full w-100 z-20 pointer-events-none
+                className="absolute right-0 h-full w-10 md:w-100 z-20 pointer-events-none
                        bg-gradient-to-l from-neutral-900 via-neutral-900/5 to-transparent"
             />
 

@@ -135,18 +135,19 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             const mesh = new THREE.InstancedMesh(new THREE.PlaneGeometry(1, 1), material, 20000);
             scene.add(mesh);
 
-            const gui = new GUI();
-            gui.add(size, 'value', 0, 1, 0.001).name('size');
-            gui.addColor({ color: colorInside.value.getHex(THREE.SRGBColorSpace) }, 'color')
-                .name('colorInside')
-                .onChange((value: string) => {
-                    colorInside.value.set(value);
-                });
-            gui.addColor({ color: colorOutside.value.getHex(THREE.SRGBColorSpace) }, 'color')
-                .name('colorOutside')
-                .onChange((value: string) => {
-                    colorOutside.value.set(value);
-                });
+            // GUI for controls
+            // const gui = new GUI();
+            // gui.add(size, 'value', 0, 1, 0.001).name('size');
+            // gui.addColor({ color: colorInside.value.getHex(THREE.SRGBColorSpace) }, 'color')
+            //     .name('colorInside')
+            //     .onChange((value: string) => {
+            //         colorInside.value.set(value);
+            //     });
+            // gui.addColor({ color: colorOutside.value.getHex(THREE.SRGBColorSpace) }, 'color')
+            //     .name('colorOutside')
+            //     .onChange((value: string) => {
+            //         colorOutside.value.set(value);
+            //     });
 
             // Renderer
             const renderer = new WebGPURenderer({ antialias: true, alpha: true });
