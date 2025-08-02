@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export const SkeletonOne = () => {
@@ -77,30 +76,7 @@ export const SkeletonOne = () => {
 };
 
 export const SkeletonTwo = () => {
-    const [widths, setWidths] = useState<number[]>([]);
 
-    useEffect(() => {
-        // This will only run on the client side
-        setWidths(Array(6).fill(0).map(() => Math.random() * (100 - 40) + 40));
-    }, []);
-
-    const variants = {
-        initial: {
-            width: 0,
-        },
-        animate: {
-            width: "100%",
-            transition: {
-                duration: 0.2,
-            },
-        },
-        hover: {
-            width: ["0%", "100%"],
-            transition: {
-                duration: 2,
-            },
-        },
-    };
 
     const designElements = [
         {

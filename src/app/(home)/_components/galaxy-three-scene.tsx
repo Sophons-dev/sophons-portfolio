@@ -5,7 +5,6 @@ import * as THREE from 'three';
 import { WebGPURenderer, SpriteNodeMaterial } from 'three/webgpu';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { color, cos, float, mix, range, sin, time, uniform, uv, vec3, vec4, PI2 } from 'three/tsl';
-import GUI from 'lil-gui';
 
 // Extend the THREE namespace to include node properties on SpriteMaterial
 /* eslint-disable @typescript-eslint/no-explicit-any */

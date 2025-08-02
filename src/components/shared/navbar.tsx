@@ -6,7 +6,7 @@ import { SophonsIcon } from "../custom/icons";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
