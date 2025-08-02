@@ -173,6 +173,12 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
 
             const onWindowResize = () => {
                 if (isDestroyed) return;
+
+                // Disable orbit controls on mobile
+                const isMobile = window.innerWidth < 768;
+                if (controls) {
+                    controls.enabled = !isMobile;
+                }
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
