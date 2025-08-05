@@ -60,7 +60,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
             const scene = new THREE.Scene();
 
             // Initialize mobile state
-            isMobileRef.current = window.innerWidth < 768;
+            isMobileRef.current = window.innerWidth < 1024;
 
             // Starfield background using standard WebGL
             const starGeometry = new THREE.BufferGeometry();
@@ -194,7 +194,7 @@ const ThreeScene = ({ className = "" }: ThreeSceneProps) => {
                 if (isDestroyed) return;
 
                 // Disable orbit controls on mobile
-                isMobileRef.current = window.innerWidth < 768;
+                isMobileRef.current = window.innerWidth < 1024;
 
                 if (controls) {
                     controls.enabled = !isMobileRef.current;
