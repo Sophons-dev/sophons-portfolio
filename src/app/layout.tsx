@@ -42,8 +42,6 @@ export const metadata: Metadata = {
     description: "Transform your business with Sophons' expert AI and Business Intelligence consulting services. We deliver custom software solutions and data-driven insights to help you stay ahead in the digital age.",
     url: "https://www.sophons.tech",
     siteName: "Sophons",
-    // fbAppId
-
     images: [
       {
         url: "/og-image.png",
